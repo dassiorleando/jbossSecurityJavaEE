@@ -1,4 +1,4 @@
-package com.dassi.jbossSecurity.model;
+package com.dassi.jbossSecurityJavaEE.model;
 
 import javax.persistence.Entity;
 import java.io.Serializable;

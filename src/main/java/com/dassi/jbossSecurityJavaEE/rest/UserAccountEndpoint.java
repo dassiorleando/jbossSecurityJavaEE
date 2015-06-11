@@ -1,4 +1,4 @@
-package com.dassi.jbossSecurity.rest;
+package com.dassi.jbossSecurityJavaEE.rest;
 
 import java.util.List;
 
@@ -20,7 +20,8 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
-import com.dassi.jbossSecurity.model.UserAccount;
+
+import com.dassi.jbossSecurityJavaEE.model.UserAccount;
 
 /**
  * 

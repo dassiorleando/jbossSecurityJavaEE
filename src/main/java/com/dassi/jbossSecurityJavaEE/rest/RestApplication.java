@@ -1,4 +1,4 @@
-package com.dassi.jbossSecurity.rest;
+package com.dassi.jbossSecurityJavaEE.rest;
 
 import javax.ws.rs.core.Application;
 import javax.ws.rs.ApplicationPath;
