@@ -1,0 +1,62 @@
+<header ng-switch on="$location.path().indexOf('/UserAccounts/new') > -1">
+    <h3 ng-switch-when="true">Create a new UserAccount</h3>
+    <h3 ng-switch-when="false">View or edit UserAccount</h3>
+</header>
+<form id="UserAccountForm" name="UserAccountForm" class="form-horizontal" role="form">
+    <div ng-show="displayError" class="alert alert-danger">
+        <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
+    </div>
+    
+
+    <div class="form-group" ng-class="{'has-error': UserAccountForm.userName.$invalid}">
+        <label for="userName" class="col-sm-2 control-label">User Name</label>
+        <div id="userNameControls" class="col-sm-10">
+            <input id="userName" name="userName" type="text"class="form-control" ng-model="userAccount.userName" placeholder="Enter the UserAccount User Name"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': UserAccountForm.email.$invalid}">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+        <div id="emailControls" class="col-sm-10">
+            <input id="email" name="email" type="text"class="form-control" ng-model="userAccount.email" placeholder="Enter the UserAccount Email"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': UserAccountForm.password.$invalid}">
+        <label for="password" class="col-sm-2 control-label">Password</label>
+        <div id="passwordControls" class="col-sm-10">
+            <input id="password" name="password" type="text"class="form-control" ng-model="userAccount.password" placeholder="Enter the UserAccount Password"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': UserAccountForm.firstName.$invalid}">
+        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+        <div id="firstNameControls" class="col-sm-10">
+            <input id="firstName" name="firstName" type="text"class="form-control" ng-model="userAccount.firstName" placeholder="Enter the UserAccount First Name"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': UserAccountForm.lastName.$invalid}">
+        <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+        <div id="lastNameControls" class="col-sm-10">
+            <input id="lastName" name="lastName" type="text"class="form-control" ng-model="userAccount.lastName" placeholder="Enter the UserAccount Last Name"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': UserAccountForm.birthDay.$invalid}">
+        <label for="birthDay" class="col-sm-2 control-label">Birth Day</label>
+        <div id="birthDayControls" class="col-sm-10">
+            <date id="birthDay" name="birthDay" ng-model="userAccount.birthDay" placeholder="Enter the UserAccount Birth Day"></date>
+            <span class="help-block error" ng-show="UserAccountForm.birthDay.$error.dateFormat">does not match format "yyyy-MM-dd" (e.g. 2013-12-01)</span>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="saveUserAccount" name="saveUserAccount" class="btn btn-primary" ng-disabled="isClean() || UserAccountForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deleteUserAccount" name="deleteUserAccount" class="btn btn-danger" ng-show="userAccount.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>
