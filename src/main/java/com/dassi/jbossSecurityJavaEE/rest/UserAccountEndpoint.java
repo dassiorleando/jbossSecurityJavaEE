@@ -3,6 +3,8 @@ package com.dassi.jbossSecurityJavaEE.rest;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.OptimisticLockException;
@@ -25,11 +27,12 @@ import com.dassi.jbossSecurityJavaEE.model.UserAccount;
  * 
  */
 @Stateless
+@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 @Path("/useraccounts")
 public class UserAccountEndpoint {
 
 	@Inject
-	UserAccountEjb ejb;
+	private UserAccountEjb ejb;
 
 	@PersistenceContext(unitName = "jbossSecurityJavaEE")
 	private EntityManager em;

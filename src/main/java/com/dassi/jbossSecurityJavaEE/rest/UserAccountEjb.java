@@ -2,7 +2,6 @@ package com.dassi.jbossSecurityJavaEE.rest;
 
 import java.util.List;
 
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -13,11 +12,10 @@ import com.dassi.jbossSecurityJavaEE.repo.UserAccountRepository;
  * Session Bean implementation class UserAccountEjb
  */
 @Stateless
-@LocalBean
 public class UserAccountEjb {
 
 	@Inject
-	UserAccountRepository repository;
+	private UserAccountRepository repository;
 
 	// @PersistenceContext(unitName = "jbossSecurityJavaEE")
 	// private EntityManager em;
